@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Layered Risk Mapping for Autonomous Patient Transport</title>
+  <meta name="description" content="Layered Risk Mapping for Autonomous Patient Transport in Expeditionary Medical Facilities — SSRR 2026">
+
+  <link rel="icon" href="static/images/favicon.ico" type="image/x-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <!-- Bulma CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+  <!-- Bulma Carousel -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/css/bulma-carousel.min.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Academicons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Bulma Carousel JS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
+  <!-- Custom JS -->
+  <script defer src="static/js/index.js"></script>
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+
+          <h1 class="title is-1 publication-title">Layered Risk Mapping for Autonomous Patient Transport in Expeditionary Medical Facilities</h1>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Anonymous Authors</span>
+          </div>
+
+          <div class="is-size-5 publication-venue">
+            SSRR 2026
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Paper link -->
+              <span class="link-block">
+                <a href="static/paper/lrm_ssrr2026.pdf" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- arXiv -->
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code -->
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code</span>
+                </a>
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Teaser -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/01_Introduction.png" alt="Wheelchair with layered risk map overlay" width="100%">
+      <h2 class="subtitle has-text-centered">
+        A multi-layer risk mapping framework for safe autonomous patient transport in expeditionary medical facilities.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<!-- Abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            In expeditionary medical facilities, routine patient transport imposes a compounding burden
+            of personal protective equipment consumption, staff diversion, and elevated infection risk
+            that becomes unsustainable under surge conditions. While autonomous wheelchairs could absorb
+            this operational load, the safety-critical nature of patient transit within these highly
+            unstructured and dynamic environments poses complex navigational challenges. To address this,
+            we present a multi-layer risk mapping framework that fuses heterogeneous environmental hazards
+            (terrain slope, obstacles, semantic traversability) into a unified probabilistic cost surface
+            to ensure safe autonomous patient transport. We evaluate the framework in simulation and
+            validate its real-world applicability on a commercial powered-wheelchair platform across three
+            representative mission profiles: intake, intra-facility transfer, and egress. Our results
+            demonstrate that this architecture successfully meets the planning requirements of this
+            previously unaddressed operational regime.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Method -->
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method</h2>
+        <div class="method-figure">
+          <img src="static/images/02_Method.png" alt="Multi-layer risk fusion architecture diagram">
+        </div>
+        <p class="method-caption" style="margin-top:10px;">
+          <b>Figure 2.</b> Global elevation data, real-time semantic segmentation, and
+          IMU-visual SLAM are fused via a Noisy-OR model into a unified cost surface driving
+          an MPPI local planner.
+        </p>
+        <div class="content has-text-justified" style="margin-top:1.5rem;">
+          <p>
+            Our framework decomposes environmental risk into four complementary layers: terrain slope
+            derived from global elevation data, obstacle proximity from real-time LiDAR and depth sensing,
+            semantic traversability from a learned segmentation model, and localization uncertainty from
+            IMU-visual SLAM. These heterogeneous risk signals are combined through a Noisy-OR probabilistic
+            fusion model, producing a unified cost surface that preserves the independence of individual
+            hazard detectors while capturing their joint effect. The resulting risk map drives a
+            Model Predictive Path Integral (MPPI) local planner for real-time trajectory optimization.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Simulation Results (commented out)
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Simulation Results</h2>
+        ... table content ...
+      </div>
+    </div>
+  </div>
+</section>
+-->
+
+<!-- Field Validation (commented out) 
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Field Validation</h2>
+
+        <div class="field-validation-grid">
+          <div class="field-card">
+            <img src="static/images/fig4a_indoor.jpg" alt="Indoor field validation environment">
+            <p class="figure-caption"><b>Indoor environment</b> — intake and intra-facility transfer profiles.</p>
+          </div>
+          <div class="field-card">
+            <img src="static/images/fig4b_outdoor.jpg" alt="Outdoor field validation environment">
+            <p class="figure-caption"><b>Outdoor environment</b> — egress mission profile.</p>
+          </div>
+        </div>
+
+        <div class="full-width-figure">
+          <img src="static/images/fig6_risk_map.png" alt="Mid-transit snapshot with local risk map overlay">
+          <p class="figure-caption">
+            <b>Figure 6.</b> Mid-transit snapshot showing the local risk map overlay
+            during autonomous patient transport.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+-->
+
+<!-- Experiment Videos Carousel -->
+<section class="hero is-small" id="experiments">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered">Experiments</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+          <video controls muted preload="metadata">
+            <source src="static/videos/indoor_intake.mp4" type="video/mp4">
+          </video>
+          <div class="video-caption">Indoor — Intake</div>
+        </div>
+        <div class="item">
+          <video controls muted preload="metadata">
+            <source src="static/videos/indoor_intra_facility.mp4" type="video/mp4">
+          </video>
+          <div class="video-caption">Indoor — Intra-facility Transfer</div>
+        </div>
+        <div class="item">
+          <video controls muted preload="metadata">
+            <source src="static/videos/indoor_egress.mp4" type="video/mp4">
+          </video>
+          <div class="video-caption">Indoor — Egress</div>
+        </div>
+        <div class="item">
+          <video controls muted preload="metadata">
+            <source src="static/videos/outdoor_intake.mp4" type="video/mp4">
+          </video>
+          <div class="video-caption">Outdoor — Intake</div>
+        </div>
+        <div class="item">
+          <video controls muted preload="metadata">
+            <source src="static/videos/outdoor_egress.mp4" type="video/mp4">
+          </video>
+          <div class="video-caption">Outdoor — Egress</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BibTeX -->
+<section class="section" id="bibtex">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <div class="bibtex-container">
+      <button id="copy-bibtex" class="copy-btn">Copy</button>
+      <pre><code id="bibtex-code">Citation coming soon.</code></pre>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io" target="_blank" rel="noopener">Nerfies</a>. Please remember to remove the analytics code included in the header of the website which you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
